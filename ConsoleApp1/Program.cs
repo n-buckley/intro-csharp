@@ -6,17 +6,24 @@
 * else = itself
 */
 
-for (int i = 1; i <=15; i++){
-    if (i % 3 == 0 && i % 5 == 0){
-        Console.WriteLine("FizzBuzz");
-    }
-    else if (i % 3 == 0 ){
-        Console.WriteLine("Fizz");
-    }
-    else if ( i % 5 == 0){
-        Console.WriteLine("Buzz");
-    }
-    else {
-        Console.WriteLine(i);
-    }
+string name = "Aba";
+int age = 23;
+
+string interpolation = $"ur name is {name} and ur age is {age}";
+Console.WriteLine( interpolation);
+
+
+for (int i = 0; i < interpolation.Length; i++){
+    Console.Write(interpolation[i] );
+    // python-like substring/indexification of strings
+    // i am making up words
+    System.Threading.Thread.Sleep(100); // fun text output :D
 }
+Console.WriteLine();
+
+Console.WriteLine(interpolation.Contains("u")); 
+
+string n = null;
+
+if (!string.IsNullOrEmpty(n))
+    Console.WriteLine("use this!");
