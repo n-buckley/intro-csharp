@@ -1,18 +1,26 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-string textAge = "-23";
-int age = Convert.ToInt32(textAge);
+bool isPink = true;
+Console.WriteLine(isPink);
 
-Console.WriteLine(textAge);
+int age = 23; 
+age++;
+// age = age + 1;
+// age += 1
+age--;
 
-/* Others
+string name = "Aba";
+string rest = "is programming";
+name += rest;
 
-long        ToInt64
-double      ToDouble
-float       ToSingle
-decimal     ToDecimal
+char a = 'a';
+a += 'b';
+// will add the unicode values together, and result in the character at that unicode value
 
-*/
-//Convert doenst convert characters e.g. 'a'
+int i = 0;
+Console.WriteLine(i++); //addition will execute AFTER print to console
+Console.WriteLine(++i); //addition executes BEFORE print
+
+// % is the same 
 
 Console.ReadLine();
