@@ -1,25 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-for (int i = 0 ; i < 5; i++){
 
-    Console.WriteLine(i);
-}
+int age = -10; 
 
-
-// normal java loops
-
-int j = 0;
-while (j < 5){
-    Console.WriteLine(j);
-    j += 1;
-}
-
-// nomral while loops
-
-
-int x = 0;
-do 
-{
-
-    Console.WriteLine(x);
-} while (x < 0);
+//condition ? true : flase
+string result = age>=0 ? "valied" : "invalid";
