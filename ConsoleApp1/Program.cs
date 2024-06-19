@@ -1,43 +1,32 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using System.Runtime.Intrinsics.Arm;
+Console.Write("Enter day of the week (1-7): ");
+int day = Convert.ToInt32(Console.ReadLine());
 
-Console.Write("Enter your name: ");
-string name = Console.ReadLine();
+switch (day) 
+{
 
-Console.Write("What id your age: ");
-string ageInput = Console.ReadLine();
-int age = Convert.ToInt32(ageInput);
+    case 1: Console.WriteLine("Mon");
+        break; // Need to include for syntax
+    case 2: Console.WriteLine("Tues");
+        break; 
+    case 3: Console.WriteLine("Wed");
+        break; 
+    case 4: Console.WriteLine("Thur");
+        break; 
+    case 5: Console.WriteLine("Fri");
+        break; 
+    case 6: Console.WriteLine("Sat");
+        break; 
+    case 7: Console.WriteLine("Sun");
+        break;
+    default: Console.WriteLine("Enter value between 1 and 7");
+        break;
 
-Console.WriteLine("Your name is " + name + " and your age is " + age);
+    // can chain by doing
+    // case 1:
+    // case 2: Console.WriteLine("1 and 2 will ahve the same print statemnt");
+    //     break;
 
-// == > >= < <= ! || &&
-if (age < 0 || age > 150){
-    Console.WriteLine("Invalid age");
-}
-else {
-    if (age >= 18 && age < 25){
-        Console.WriteLine("You are 18 or older");
-    }
-    else if (age >= 25) {
-        Console.WriteLine("You are 25 or older");
 
-    }
-}
-
-Console.Write("Enter a number: ");
-int numA = Convert.ToInt32(Console.ReadLine());
-
-Console.Write("Enter another number: ");
-int numB = Convert.ToInt32(Console.ReadLine());
-
-Console.Write("What is " + numA + " times " + numB + ": ");
-int answerInput = Convert.ToInt32(Console.ReadLine());
-
-int answer = numA * numB;
-if (answer == answerInput) {
-    Console.WriteLine("Correct");
-}
-else {
-    Console.WriteLine("No");
 }
