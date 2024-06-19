@@ -1,22 +1,11 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-int age = 23;
-Console.WriteLine(age);
+string name = "Abba";
+char letter  ='a'; // default character'\0'
 
-long bigNumber = 900000000L;
-Console.WriteLine(bigNumber);
-
-double negative = -55.22D; //D not necessary for double
-Console.WriteLine(negative);
-
-double precision = 5.000001F;
-Console.WriteLine(precision);
-
-decimal money = 14.99M; //decimal is different than double, even bigger than long 
-Console.WriteLine(money);
-
-int x = 10, 
-    y = 20, 
-    z = 30;
+Console.Write("Your name is ");
+Console.Write(name);
+//without a /n WriteLine will write on the previous line
+Console.WriteLine(letter);
 
 Console.ReadLine();
