@@ -1,26 +1,18 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-bool isPink = true;
-Console.WriteLine(isPink);
+var age = 23; // automatically initialized as an Int
 
-int age = 23; 
-age++;
-// age = age + 1;
-// age += 1
-age--;
+//var big = 90000000; // int
+var big = 900000L; // int64
 
-string name = "Aba";
-string rest = "is programming";
-name += rest;
+// not really great for readablity (why does it exisit)
 
-char a = 'a';
-a += 'b';
-// will add the unicode values together, and result in the character at that unicode value
+const int gravity = -9;
+// gravity = 6 // illegal
+Console.WriteLine(gravity);
 
-int i = 0;
-Console.WriteLine(i++); //addition will execute AFTER print to console
-Console.WriteLine(++i); //addition executes BEFORE print
+const int vat = 20;
+const double perVAT = vat / 100D; //make sure to include D for good double division
 
-// % is the same 
 
 Console.ReadLine();
