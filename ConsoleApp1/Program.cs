@@ -1,29 +1,32 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-/* Create a for loop 1 to X (15)
-* 3 and 5 = FizzBuzz 
-* 3 = Fizz, 5 = Buzz (if divisible)
-* else = itself
-*/
+int[] angles = new int[3]; //makes array of size 3
 
-string name = "Aba";
-int age = 23;
+angles[0] = 0;
+angles[1] = 1; 
+angles[2] = 2;
 
-string interpolation = $"ur name is {name} and ur age is {age}";
-Console.WriteLine( interpolation);
+//angles.Length
 
+foreach (int n in angles){
 
-for (int i = 0; i < interpolation.Length; i++){
-    Console.Write(interpolation[i] );
-    // python-like substring/indexification of strings
-    // i am making up words
-    System.Threading.Thread.Sleep(100); // fun text output :D
+    Console.Write(n + " ");
 }
 Console.WriteLine();
 
-Console.WriteLine(interpolation.Contains("u")); 
+int[] numbers = new int[] 
+{
+ 9, 8, 7, 6, 5, 4, 3, 2, 1
+};
 
-string n = null;
+Array.Sort(numbers); //mutates -- i forget the term...
+Console.WriteLine(string.Join(",", numbers));
 
-if (!string.IsNullOrEmpty(n))
-    Console.WriteLine("use this!");
+Array.Reverse(numbers);
+Console.WriteLine(string.Join(",", numbers));
+
+// Array.Clear(numbers); //sets all values to default of the data type
+Array.Clear(numbers, 5, 4); // clears values starting at index 5 + 4
+Console.WriteLine(string.Join(",", numbers));
+
+Console.WriteLine(Array.IndexOf(numbers, 0)); //can also substring , start index, last index 
