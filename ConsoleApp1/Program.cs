@@ -11,66 +11,61 @@
 //main:
 using System.Reflection.Metadata.Ecma335;
 
-Person person = new Person("Aba", 23, 5);
-person.PrintDetails(); //object.Method()
+Person person = new Person("Aba", 23);
+person.PrintDetails();
+Console.WriteLine($"{person} ");
 
-// person.Name= "Henery";
-// Console.WriteLine($"{person.Name} ");
+Person person2 = new Person("Aba", 23);
+Person person3 = new Person("Aba!", 23);
 
-// no longer allowed with private fields
+Console.WriteLine($"{person.Equals(person2)} ");    // without updating .Equals should be False
+                                                    // after updating should be True
 
-//using getters and setters
-person.setName("Henry");
-Console.WriteLine($"{person.getName()} ");
+Console.WriteLine($"{person.Equals(person3)} ");    // should be false before AND after override
 
-//using properties
-person.Name = "Gerald";
-Console.WriteLine($"{person.Name} ");
+
 
 class Person
 {
-    private string name; 
-    private int age;
-    private int birthMonth; // i lied fields are REGULAR camel Case
+    public string Name {get; set;}
+    public int Age {get; set;}
 
-    public string Name
-    {
-        get => this.name;
-        set => this.name = value;
-    }
 
-    public string UserName {get; set;}
-    // just creating a property C will create a matching private variable 
-    // with default getter and setter 
-    // so you dont need to initialize a userName seperatley
 
     //contructor
-    public Person(string name, int age, int birthMonth)
+    public Person(string name, int age)
     {
-        this.Name = name;
+        Name = name;
         //convention is also to make the fields Capital Camel
-        age = age;
-        birthMonth = birthMonth;
+        Age = age;
 
     }
 
     //also a constructor
     public Person(){}
 
-    // in all your other class fucntions you also want to use the Properties (whyy???)
 
     public string PrintDetails(){
-        Console.WriteLine($"Name: {Name}");  // using the property ***
-        Console.WriteLine($"Age: {this.age}");
-        Console.WriteLine($"Birth Month: {this.birthMonth}");
+        Console.WriteLine($"Name: {Name}");  
+        Console.WriteLine($"Age: {Age}");
 
         return "success";
     }
 
-    // dont actually use these 
-    public void setName(string name) => this.name = name;
-    public string getName() => this.name;
-    public int GetAge() => this.age; //shorthand
+    public override string ToString()
+    {
+        return $"Name: {Name}\nAge: {Age}";
+    }
+
+    public override bool Equals(object? obj)
+    {
+        if (obj is Person) //type checking
+        {
+            Person p = obj as Person; //type casting
+            return Name.Equals(p.Name) && Age == p.Age; 
+        }
+        return false;
+    }
 }
 
 
