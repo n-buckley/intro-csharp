@@ -6,67 +6,28 @@
 // https://youtu.be/YrtFtdTTfv0?si=TZTAaLvlkKQxzn9o&t=16940
 
 //main:
-using System.Runtime.InteropServices;
 
-Console.WriteLine(Add(5, 5));
-Console.WriteLine(Add(5));
-
-//optional paramaters
-static int Add(int a, int b = default)
+try
 {
-    return a + b;
+    Console.WriteLine("Eter a number:");
+    int num = Convert.ToInt32(Console.ReadLine());
+    // if enter number too big (over 9000000000) will throw exception
+
+    Console.WriteLine(num);
+
+
 }
-//does the same thing as int b = default
-// static int Add(int a, [Optional] int b)
-// {
-//     return a + b;
-// }
-
-
-string nameIn = "Aba";
-int ageIn = 23;
-string addyIn = "1 Hilton Rd";
-
-//correct order
-PrintDetails(nameIn, ageIn, addyIn);
-
-//incorect order using named paramaters still works
-PrintDetails(age:ageIn,
-             name:nameIn,
-             addy:addyIn);
-
-
-static void PrintDetails(string name, int age, string addy)
+catch (FormatException)
 {
-    Console.WriteLine($"Name: {name}");
-    Console.WriteLine($"Age: {age}");
-    Console.WriteLine($"Address: {addy}");
+    Console.WriteLine("Not an int");
+}
+catch (OverflowException)
+{
+    Console.WriteLine("Integer entered was too big");
+}
+catch (Exception e)  //will catch every exception 
+{
+    Console.WriteLine("Something went wrong");
+    Console.WriteLine(e.Message);
 
 }
-
-//out parameters
-int num = 0;
-Console.WriteLine(num); //prints 0
-// can ommit above lines and do this instead
-//test(out int num);
-
-test(out num); //mutates num/the variable passed in
-
-
-static bool test(out int num){
-    num = 5; 
-    return true;
-}
-Console.WriteLine(num); //print 5
-
-//reference parameters (ref param)
-//c flash backs
-
-int numBooks = 5;
-Console.WriteLine(numBooks);
-Assign(ref numBooks);
-
-static void Assign(ref int num){
-    num = 20; //also mutates (uts 20 at the passed address in memory)
-}
-Console.WriteLine(numBooks);
