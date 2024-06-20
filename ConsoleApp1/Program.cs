@@ -6,16 +6,24 @@
 // https://youtu.be/YrtFtdTTfv0?si=TZTAaLvlkKQxzn9o&t=16940
 
 //main:
-Person person = new Person("Aba", 23, 5);
+using System.Reflection.Metadata.Ecma335;
 
-// Console.WriteLine($"{person.Name} - {person.Age} - {person.BirthMonth}");
+Person person = new Person("Aba", 23, 5);
 person.PrintDetails(); //object.Method()
+
+// person.Name= "Henery";
+// Console.WriteLine($"{person.Name} ");
+
+// no longer allowed with private fields
+
+person.setName("Henry");
+Console.WriteLine($"{person.getName()} ");
 
 class Person
 {
-    public string Name; 
-    public int Age;
-    public int BirthMonth;
+    private string Name; 
+    private int Age;
+    private int BirthMonth;
 
     //contructor
     public Person(string name, int age, int birthMonth)
@@ -37,6 +45,19 @@ class Person
 
         return "success";
     }
+
+    public void setName(string name)
+    {
+        //check fo validity here 
+        Name = name;
+    }
+
+    public string getName()
+    {
+        return Name;
+    }
+
+    public int GetAge() => Age; //shorthand
 }
 
 
