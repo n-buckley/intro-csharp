@@ -7,27 +7,55 @@
 
 //main:
 
-try
-{
-    Console.WriteLine("Eter a number:");
-    int num = Convert.ToInt32(Console.ReadLine());
-    // if enter number too big (over 9000000000) will throw exception
+Person person; 
+person.name = "Aba";
+person.age = 23;
+//cannot set or access SSN bc private, defualt is private
 
-    Console.WriteLine(num);
+Console.WriteLine($"{person.name} - {person.age}");
+
+person = ConsolePerson();
+Console.WriteLine($"{person.name} - {person.age}");
 
 
-}
-catch (FormatException)
-{
-    Console.WriteLine("Not an int");
-}
-catch (OverflowException)
-{
-    Console.WriteLine("Integer entered was too big");
-}
-catch (Exception e)  //will catch every exception 
-{
-    Console.WriteLine("Something went wrong");
-    Console.WriteLine(e.Message);
+static Person ConsolePerson(){
+    Console.Write("What is uur name: ");
+    string name = Console.ReadLine();
 
+    Console.Write("What is uur name: ");
+    int age = Convert.ToInt32(Console.ReadLine());
+
+    Console.Write("What is uur nabirth monthme: ");
+    int birth = Convert.ToInt32(Console.ReadLine());
+    
+
+    // Person p; 
+    // p.name = name;
+    // p.age = age;
+    // p.birthMonth = birth;
+   
+
+    return p;
 }
+
+struct Person
+{
+    // private string SSN;
+    // string SSN;
+    public string Name; 
+    public int Age;
+    public int BirthMonth;
+
+    //contructor
+    public Person(string name, int age, int birthMonth)
+    {
+        this.Name = name;
+        //convention is also to make the fields Capital Camel
+        Age = age;
+        BirthMonth = birthMonth;
+
+    }
+}
+
+
+
