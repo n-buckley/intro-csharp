@@ -1,28 +1,29 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-int[] numbers = new int[] 
+Dictionary<int, string> names = new Dictionary<int, string>()
 {
- 9, 8, 7, 6, 5, 4, 3, 2, 1
+    {1, "Aba"},
+    {2, "Test"},
+    {3, "Test2"}
 };
 
-List<int> listEmpty = new List<int>();
-List<int> listDefault = new List<int>(3);
-List<int> listColl = new List<int>(); //Can also add another collection
-List<int> listNums = new List<int>()
+names.Add( 4, "Aba");
+
+for (int i = 0; i < names.Count; i++)
 {
-    1, 2, 3, 4
-};
-
-
-listNums.Add(1);
-listNums.Add(2);
-listNums.Add(3);
-listNums.Add(4);
-
-for(int i =0; i < listNums.Count; i++){
-    Console.Write(listNums[i] + ", ");
+   KeyValuePair<int, string> pair = names.ElementAt(i);
+   Console.WriteLine($"{pair.Key}: {pair.Value}");
 }
-Console.WriteLine();
+Console.WriteLine(string.Join(", ", names));
 
-Console.WriteLine(string.Join(", ", listNums));
+Console.WriteLine(names[1]); //gets the value at the key given (search)
+
+
+if (names.TryGetValue(5, out string name)) //alternatively names.ContainsKey(5)
+{
+    Console.WriteLine(name);
+}
+else {
+    Console.WriteLine("Not found");
+}
 
