@@ -6,42 +6,34 @@
 // https://youtu.be/YrtFtdTTfv0?si=TZTAaLvlkKQxzn9o&t=16940
 
 //main:
+Person person = new Person("Aba", 23, 5);
 
-Person person; 
-person.name = "Aba";
-person.age = 23;
-//cannot set or access SSN bc private, defualt is private
+Console.WriteLine($"{person.Name} - {person.Age} - {person.BirthMonth}");
 
-Console.WriteLine($"{person.name} - {person.age}");
+// more useful for simple custom datatypes
+// struct Person
+// {
+//     // private string SSN;
+//     // string SSN;
+//     public string Name; 
+//     public int Age;
+//     public int BirthMonth;
 
-person = ConsolePerson();
-Console.WriteLine($"{person.name} - {person.age}");
+//     //contructor
+//     public Person(string name, int age, int birthMonth)
+//     {
+//         this.Name = name;
+//         //convention is also to make the fields Capital Camel
+//         Age = age;
+//         BirthMonth = birthMonth;
 
+//     }
+// }
 
-static Person ConsolePerson(){
-    Console.Write("What is uur name: ");
-    string name = Console.ReadLine();
-
-    Console.Write("What is uur name: ");
-    int age = Convert.ToInt32(Console.ReadLine());
-
-    Console.Write("What is uur nabirth monthme: ");
-    int birth = Convert.ToInt32(Console.ReadLine());
-    
-
-    // Person p; 
-    // p.name = name;
-    // p.age = age;
-    // p.birthMonth = birth;
-   
-
-    return p;
-}
-
-struct Person
+// ^ ---  main difference is you can leave a Class constructor/fields empty  ---- v 
+// more useful for complicated fucntions, and flexibility.
+class Person
 {
-    // private string SSN;
-    // string SSN;
     public string Name; 
     public int Age;
     public int BirthMonth;
@@ -55,7 +47,9 @@ struct Person
         BirthMonth = birthMonth;
 
     }
-}
 
+    //also a constructor
+    public Person(){}
+}
 
 
