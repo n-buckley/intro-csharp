@@ -8,30 +8,9 @@
 //main:
 Person person = new Person("Aba", 23, 5);
 
-Console.WriteLine($"{person.Name} - {person.Age} - {person.BirthMonth}");
+// Console.WriteLine($"{person.Name} - {person.Age} - {person.BirthMonth}");
+person.PrintDetails(); //object.Method()
 
-// more useful for simple custom datatypes
-// struct Person
-// {
-//     // private string SSN;
-//     // string SSN;
-//     public string Name; 
-//     public int Age;
-//     public int BirthMonth;
-
-//     //contructor
-//     public Person(string name, int age, int birthMonth)
-//     {
-//         this.Name = name;
-//         //convention is also to make the fields Capital Camel
-//         Age = age;
-//         BirthMonth = birthMonth;
-
-//     }
-// }
-
-// ^ ---  main difference is you can leave a Class constructor/fields empty  ---- v 
-// more useful for complicated fucntions, and flexibility.
 class Person
 {
     public string Name; 
@@ -50,6 +29,14 @@ class Person
 
     //also a constructor
     public Person(){}
+
+    public string PrintDetails(){
+        Console.WriteLine($"Name: {Name}");
+        Console.WriteLine($"Age: {Age}");
+        Console.WriteLine($"Birth Month: {BirthMonth}");
+
+        return "success";
+    }
 }
 
 
